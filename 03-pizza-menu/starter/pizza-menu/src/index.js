@@ -1,3 +1,7 @@
+// Importing libraries installed
+import React from "react";
+import ReactDom from "react-dom/client";
+
 const pizzaData = [
   {
     name: "Focaccia",
@@ -42,3 +46,35 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+
+//Component
+function App() {
+  return (
+    <div>
+      <h1>Hello React!</h1>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
+
+// Components as functions need to start with capital letter and need to return some markup
+function Pizza() {
+  return (
+    <div>
+      <h2>Pizza Spinaci</h2>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci picture" />
+    </div>
+  );
+}
+
+// React v18
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(
+  // It will render our components checking oudating code or bugs
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
